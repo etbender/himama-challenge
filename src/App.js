@@ -61,6 +61,7 @@ class App extends Component {
   
   clockIn = () => {
     const name = this.inputRef.current.value;
+    const lowerCaseName = name.toLowerCase();
     const time = this.state.time;
     
     if(name.length === 0){
@@ -70,14 +71,14 @@ class App extends Component {
     
     console.log(name.length);
     
-    if(this.employees.has(name)){
-      if(this.employees.get(name) === CLOCKED_IN){
+    if(this.employees.has(lowerCaseName)){
+      if(this.employees.get(lowerCaseName) === CLOCKED_IN){
         alert(`${name} is already clocked in!`);
         return;
       }
     }
     
-    this.employees.set(name, CLOCKED_IN);
+    this.employees.set(lowerCaseName, CLOCKED_IN);
     
     const event = {name: name, time: time, type: "Clock In"}
     const events = this.state.events.slice();
@@ -88,10 +89,11 @@ class App extends Component {
   
   clockOut = () => {
     const name = this.inputRef.current.value;
+    const lowerCaseName = name.toLowerCase();
     const time = this.state.time;
     
-    if(this.employees.has(name)){
-      if(!(this.employees.get(name) === CLOCKED_IN)){
+    if(this.employees.has(lowerCaseName)){
+      if(!(this.employees.get(lowerCaseName) === CLOCKED_IN)){
         alert(`${name} must be clocked in to clock out!`);
         return;
       }
@@ -101,7 +103,7 @@ class App extends Component {
       return;
     }
     
-    this.employees.set(name, CLOCKED_OUT);
+    this.employees.set(lowerCaseName, CLOCKED_OUT);
     
     const event = {name: name, time: time, type: "Clock Out"}
     const events = this.state.events.slice();
