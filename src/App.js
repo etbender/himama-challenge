@@ -43,7 +43,7 @@ class App extends Component {
       
       events.push(
         <div key={i} className="event" style={style}>
-          <div className="column">{this.state.events[i].name} </div>
+          <div className="left-column column">{this.state.events[i].name} </div>
           <div className="column">{this.state.events[i].time.toLocaleString()} </div>
           <div className="column">{this.state.events[i].type} </div>
         </div>
@@ -132,7 +132,7 @@ class App extends Component {
         </div>
         
         <div className="event">
-          <div className="column"><b>Name</b></div>
+          <div className="left-column column"><b>Name</b></div>
           <div className="column"><b>Time</b></div>
           <div className="column"><b>Event Type</b></div>
         </div>

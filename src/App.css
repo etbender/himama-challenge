@@ -49,5 +49,9 @@ button {
 
 .column {
   flex: 1;
+  margin-right: 10px;
+}
+
+.left-column {
   word-break: break-all;
 }
