@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 const CLOCKED_IN = "Clocked In";
@@ -63,6 +62,11 @@ class App extends Component {
   clockIn = () => {
     const name = this.inputRef.current.value;
     const time = this.state.time;
+    
+    if(name.length === 0){
+      alert("Name field cannot be empty");
+      return;
+    }
     
     console.log(name.length);
     
