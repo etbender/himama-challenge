@@ -60,7 +60,7 @@ class App extends Component {
   }
   
   clockIn = () => {
-    const name = this.inputRef.current.value;
+    const name = this.inputRef.current.value.trim().replace(/ +(?= )/g,'');
     const lowerCaseName = name.toLowerCase();
     const time = this.state.time;
     
@@ -88,7 +88,7 @@ class App extends Component {
   }
   
   clockOut = () => {
-    const name = this.inputRef.current.value;
+    const name = this.inputRef.current.value.trim().replace(/ +(?= )/g,'');
     const lowerCaseName = name.toLowerCase();
     const time = this.state.time;
     
