@@ -92,6 +92,11 @@ class App extends Component {
     const lowerCaseName = name.toLowerCase();
     const time = this.state.time;
     
+    if(name.length === 0){
+      alert("Name field cannot be empty");
+      return;
+    }
+    
     if(this.employees.has(lowerCaseName)){
       if(!(this.employees.get(lowerCaseName) === CLOCKED_IN)){
         alert(`${name} must be clocked in to clock out!`);
