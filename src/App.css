@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  margin-left: 10px;
+}
+
+#inputForm {
+  margin-bottom: 30px;
+}
+
+.event {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.column {
+  flex: 1;
+}
